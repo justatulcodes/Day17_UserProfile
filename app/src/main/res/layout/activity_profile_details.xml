@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_profile_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sheet_background"
+    android:orientation="vertical"
+    app:behavior_peekHeight="@dimen/_280sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp"
+        >
+
+        <ImageView
+            android:id="@+id/horizontal_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/horizontal_line"
+            app:tint="@color/light_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_12sdp"
+            android:fontFamily="@font/pt_serif_bold"
+            android:letterSpacing="0.2"
+            android:textColor="@color/primary_black"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line"
+            app:layout_constraintBottom_toTopOf="@id/bt_follow"
+            tools:text="Janette Doe" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/follow_btn_shape"
+            android:text="@string/follow"
+            app:elevation="0dp"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+        <TextView
+            android:id="@+id/profile_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_bio"
+            android:textColor="@color/text_gray"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_followers"
+            app:layout_constraintTop_toBottomOf="@id/bt_follow" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textColor="@color/secondary_black"
+            android:textSize="@dimen/_22sdp"
+            app:layout_constraintEnd_toStartOf="@id/tv_followers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_bio"
+            app:layout_constraintWidth_default="spread"
+            tools:text="137" />
+
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textColor="@color/secondary_black"
+            android:textSize="@dimen/_22sdp"
+            app:layout_constraintEnd_toStartOf="@id/tv_posts"
+            app:layout_constraintStart_toEndOf="@id/tv_following"
+            app:layout_constraintTop_toBottomOf="@id/profile_bio"
+            app:layout_constraintWidth_default="spread"
+            tools:text="12K" />
+
+        <TextView
+            android:id="@+id/tv_posts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textColor="@color/secondary_black"
+            android:textSize="@dimen/_22sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_followers"
+            app:layout_constraintTop_toBottomOf="@id/profile_bio"
+            app:layout_constraintWidth_default="spread"
+            tools:text="59" />
+
+
+        <TextView
+            android:id="@+id/following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintEnd_toStartOf="@id/tv_followers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_followers"
+            app:layout_constraintWidth_default="spread"
+            android:text="@string/following" />
+
+        <TextView
+            android:id="@+id/followers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.2"
+            android:gravity="center"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintEnd_toStartOf="@id/tv_posts"
+            app:layout_constraintStart_toEndOf="@id/tv_following"
+            app:layout_constraintTop_toBottomOf="@id/tv_followers"
+            app:layout_constraintWidth_default="spread"
+            android:text="@string/followers" />
+
+        <TextView
+            android:id="@+id/posts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.2"
+            android:gravity="center"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_followers"
+            app:layout_constraintTop_toBottomOf="@id/tv_followers"
+            app:layout_constraintWidth_default="spread"
+            android:text="@string/posts" />
+
+
+        <TextView
+            android:id="@+id/posts_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/followers"
+            android:text="@string/posts" />
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/posts_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/_120sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_post_image1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/girl1_3"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                    android:layout_height="@dimen/_120sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_post_image2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/girl1_3"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/_120sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_post_image3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/girl1_3"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"                    android:layout_height="@dimen/_120sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_post_image4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/girl1_3"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+

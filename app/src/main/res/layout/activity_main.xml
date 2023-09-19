@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_profile_pic"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/girl1_1"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/profile_picture"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/side_nav_button"
+        android:src="@drawable/menu"
+        android:layout_margin="@dimen/_10sdp"
+        android:backgroundTint="@color/transparent"/>
+
+    <include layout="@layout/activity_profile_details"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
